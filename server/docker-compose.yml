@@ -1,0 +1,28 @@
+version: "1"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=assignment_database
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - SCREENSHOT_JOB_SCHEDULE = '* * * * *'
+
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=assignment_database
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
