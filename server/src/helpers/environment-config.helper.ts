@@ -1,7 +1,10 @@
+import * as dotenv from 'dotenv';
+
 class EnvironmentConfig {
     private env: Record<string, string>;
   
     constructor() {
+      dotenv.config();
       this.env = process.env as Record<string, string>;
     }
   

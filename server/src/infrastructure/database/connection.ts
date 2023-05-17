@@ -2,6 +2,8 @@ import { Sequelize } from "sequelize";
 
 import envConfig from "../../helpers/environment-config.helper";
 
+console.log(envConfig.get("DATABASE_NAME"));
+
 const sequelize = new Sequelize({
   database: envConfig.get("DATABASE_NAME") || "assignment-database",
   username: envConfig.get("DATABASE_USERNAME") || "postgres",
