@@ -47,7 +47,7 @@ App.init(
   },
   {
     sequelize,
-    tableName: "apps", // Adjust the table name if needed
+    tableName: "apps",
     underscored: true,
     timestamps: false,
   }

@@ -1,4 +1,3 @@
-import { Screenshot } from "core/entities/screenshot.entity";
 import { App } from "../../core/entities/app.entity";
 
 export interface IAppRepository {
