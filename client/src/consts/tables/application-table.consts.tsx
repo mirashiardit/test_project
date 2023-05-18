@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
 import { GridColDef } from "@mui/x-data-grid";
-import { useRouter } from "next/router";
 
 export const applicationTableColumns: Array<GridColDef> = [
   {

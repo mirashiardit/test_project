@@ -6,7 +6,6 @@ import { App } from "@/interfaces/data/app.interface";
 import { DataGrid } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
 import styles from "../../styles/applications-page.module.css";
-import { useRouter } from "next/router";
 
 
 interface ApplicationsPageProps {
