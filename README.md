@@ -74,7 +74,7 @@ by following the steps below:
 for each project, specifying the correct instructions on how to build the Docker image and making sure we are 
 exposing the correct ports in order to communicate with the outside world.
 
-2. Docker your database.
+2. Dockerize your database.
 
 3. Build the Docker images.
 
