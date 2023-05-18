@@ -1,17 +1,27 @@
-import { AppService } from "core/services/app.service";
+import { AppService } from "../core/services/app.service";
 import { Request, Response } from "express";
+import urlValidator from "../helpers/url-validator.helper";
 
 export class AppController {
   constructor(private appService: AppService) {}
 
   async createApp(req: Request, res: Response): Promise<void> {
-    const { name, url } = req.body;
+    const { url } = req.body;
+
+    const isValidUrl = urlValidator.isGooglePlayStoreAppUrl(url);
+
+    if (!isValidUrl) {
+      res.status(400).json({ error: "Not a valid application url" });
+      return;
+    }
+
+    const name = urlValidator.extractAppNameFromUrl(url);
+
     try {
       const app = await this.appService.createApp(name, url);
-      console.log("App controller entered")
       res.status(201).json(app);
     } catch (error: any) {
-        console.log(error.message)
+      console.log(error.message);
       res.status(500).json({ error: "Failed to create app" });
     }
   }

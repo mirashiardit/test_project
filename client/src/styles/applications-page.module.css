@@ -1,0 +1,28 @@
+.applicationsPageContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 8rem;
+}
+
+.applicationsPageInputContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.applicationsPageInput {
+    width: 50vw;
+}
+
+.applicationsPageButton {
+    padding: 1rem 2rem;
+}
+
+.applicationsPageTableContainer {
+    flex: 4;
+}

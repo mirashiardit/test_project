@@ -6,6 +6,4 @@ export interface IAppRepository {
   findById(id: string): Promise<App | null>;
   save(app: App): Promise<void>;
   delete(id: string): Promise<void>;
-  findScreenshotsByAppId(appId: string): Promise<Screenshot[]>;
-  saveScreenshot(screenshot: Screenshot): Promise<void>;
 }

@@ -1,6 +1,6 @@
-import puppeteer, {Browser} from 'puppeteer';
+import puppeteer, { Browser } from "puppeteer";
 
-import { IBrowserService } from '../../interfaces/services/browser-service.interface';
+import { IBrowserService } from "../../interfaces/services/browser-service.interface";
 
 export class BrowserService implements IBrowserService {
   private browser: Browser | null;
@@ -11,13 +11,13 @@ export class BrowserService implements IBrowserService {
 
   public async initialize(): Promise<void> {
     this.browser = await puppeteer.launch({
-        headless: "new"
+      headless: "new",
     });
   }
 
   public async takeScreenshot(url: string): Promise<Buffer> {
     if (!this.browser) {
-      throw new Error('Browser is not initialized. Call initialize() first.');
+      throw new Error("Browser is not initialized. Call initialize() first.");
     }
 
     const page = await this.browser.newPage();
